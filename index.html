@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <!-- The whole shell's policy. Capacitor serves the bundle from capacitor://localhost with no server to send a header, so this meta tag is the only enforcement point, and the same copy lands in dist/index.html when the bundle is built.
+         script-src needs neither 'unsafe-eval' nor an inline allowance: there is no eval and no inline script.
+         style-src needs 'unsafe-inline' for the boot splash block below and for the inline styles Radix and KaTeX write.
+         img-src keeps https so remote images in a transcript still render, which is the loosest directive here by choice.
+         connect-src uses scheme sources because the gateway host is typed at sign-in: CapacitorHttp carries fetch through the native layer where CSP does not apply, while the gateway WebSocket lives in this webview and does apply. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https: wss:; object-src 'none'; base-uri 'none'" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        background: #000;
+        color: #e8e8ec;
+      }
+      /* The boot splash: the app's launch screen, continued inside the webview
+         until the topics list is on screen. Every rule is inline because it has
+         to paint before the bundle's CSS arrives, and every value matches the
+         native launch screen (Inter 800 wordmark at 50% of the screen, centered
+         on black) so the hand-off between the two is not visible. App.tsx
+         removes it: see releaseBootSplash. */
+      #boot-splash {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #000;
+        transition: opacity 200ms ease;
+      }
+      #boot-splash img {
+        display: block;
+        width: 50vw;
+        height: auto;
+      }
+      /* The splash hands over to the app's own background rather than cutting. */
+      .boot-splash-out {
+        opacity: 0;
+      }
+    </style>
+    <title>Topoi</title>
+  </head>
+  <body>
+    <div id="boot-splash" aria-hidden="true">
+      <img src="/wordmark.png" alt="" />
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

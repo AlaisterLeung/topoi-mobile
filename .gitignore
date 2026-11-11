@@ -1,0 +1,11 @@
+**/node_modules/
+**/dist/
+**/.vite/
+**/.build/
+**/xcuserdata/
+/build/
+**/ios/App/build/
+**/ios/App/Pods/
+.env*
+*.log
+.DS_Store

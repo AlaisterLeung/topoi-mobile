@@ -1,0 +1,13 @@
+diff --git a/dist/ios/utils/simulator.js b/dist/ios/utils/simulator.js
+index 5786f44ac212c322629400f23dc82663a182a746..8fe34d960df022c23381312b132a0d5d035a453b 100644
+--- a/dist/ios/utils/simulator.js
++++ b/dist/ios/utils/simulator.js
+@@ -46,7 +46,7 @@ async function runOnSimulator(udid, appPath, bundleId, waitForApp) {
+     }
+     const xCodePath = await (0, xcode_1.getXCodePath)();
+     debug(`Running simulator ${udid}`);
+-    const openResult = (0, child_process_1.spawnSync)('open', [`${xCodePath}/Applications/Simulator.app`, '--args', '-CurrentDeviceUDID', udid], { encoding: 'utf8' });
++    const openResult = (0, child_process_1.spawnSync)('open', [`devices://device/open?id=${udid}`], { encoding: 'utf8' });
+     if (openResult.status) {
+         throw new errors_1.Exception(`There was an error opening simulator: ${openResult.stderr}`);
+     }

@@ -1,0 +1,16 @@
+# The app lives at the repo root; vendor/** is deliberately not matched so the
+# pinned submodule stays out of workspace resolution.
+packages:
+  - 'packages/*'
+minimumReleaseAgeExclude:
+  - '@assistant-ui/core@0.3.34'
+  - '@assistant-ui/react@0.15.34'
+  - '@assistant-ui/store@0.3.23'
+  - assistant-stream@0.3.57
+  - assistant-cloud@0.2.11
+ignoredBuiltDependencies:
+  - unicode-animations
+patchedDependencies:
+  "native-run@2.0.3": patches/native-run.patch
+allowBuilds:
+  unicode-animations: false

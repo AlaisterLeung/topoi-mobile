@@ -1,0 +1,6 @@
+CAPACITOR_DEBUG = true
+
+// The version the bundle carries. This file is the Debug base configuration, so
+// Debug mirrors it in here; the Release configuration references the same
+// generated file directly, because it must not inherit CAPACITOR_DEBUG above.
+#include "version.xcconfig"
