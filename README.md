@@ -4,9 +4,11 @@ Talk to your agent from your phone. The threads you left open at your desk are s
 
 Built with Capacitor around the same React chat stack used by Hermes Desktop.
 
-> **App Store:** coming soon to public TestFlight.
+## Installation
 
-<!-- TODO: swap the line above for https://testflight.apple.com/join/... once the public build is live -->
+**TestFlight:** [install public beta build](https://testflight.apple.com/join/p1HbkhfU)
+
+**App Store:** coming soon
 
 ## What you get
 
